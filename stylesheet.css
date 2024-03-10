@@ -3,3 +3,8 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+#btn-div {
+    display: flex;
+    justify-content: center;
+}
