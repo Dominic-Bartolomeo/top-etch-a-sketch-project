@@ -11,16 +11,20 @@ HTML:
 JS:
 *    - Take button input
 *    - Use Onclick for button to run JS function/script
-!    - Create grid of input * input dimensions
-!    - Attach eventlistener to button
-!    - Grid is created with the same space
-!    - Maximum number of grid l || w is 100
+*    - Create grid of input * input dimensions
+*    - Attach eventlistener to button
+*    - Grid is created with the same space
+*    - Maximum number of grid l || w is 100
 
 CSS:
 *    - Set grid to flex
 *        - wrap the grid
-!    - Confine grid to certain area (960px wide) 
+*    - Confine grid to certain area (960px wide) 
 
 
 MISC (Not sure where to put yet):
     - Hover effect on grid
+
+Thinking:
+
+Make input amount of rows of columns. Hence why we only need to calc width.
