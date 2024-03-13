@@ -6,11 +6,11 @@ Etch-a-Sketch
 
 HTML:
 *    - Create container div
-^    - Create Button
+*    - Create Button
 
 JS:
-!    - Take button input
-!    - Use Onclick for button to run JS function/script
+*    - Take button input
+*    - Use Onclick for button to run JS function/script
 !    - Create grid of input * input dimensions
 !    - Attach eventlistener to button
 !    - Grid is created with the same space
