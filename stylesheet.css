@@ -8,12 +8,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 960px;
-    height: 960px;
+    width: 1000px;
+    height: 1000px;
 }
 
 #btn-div {
     justify-content: center;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
 }
+
+#container > * {
+    background-color: black;
+}
+
 

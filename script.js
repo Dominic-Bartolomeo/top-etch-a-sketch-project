@@ -3,24 +3,30 @@ const btn = document.querySelector("#btn");
 // Create grid
 function createGrid(input) {
     // Setting Parameters for Grid
-    let realInput = input++;    
-    const gridContainer = document.querySelector("#container");
-    let gridWidth = (960 / input);
+    input;
 
-    // while(document.querySelector("#grid")){
-    //     gridContainer.removeChild(gridContainer.gridDiv);
-        
-    // }
+    const gridContainer = document.querySelector("#container");
+    let gridWidth = (1000/ input);
+    console.log("Div Width: " + gridWidth);
+    // gridWidth.toFixed(2);
     
     // Create grid
-    for(let i = 0; i<realInput;i++){
-        for (let j = 0; j < realInput; j++){
+    for(let i = 0; i <input; i++){
+        console.log("Row " + i + " Created");
+        for (let j = 0; j < input; j++){
+            console.log("Div " + i + " Created");
             const gridDiv = document.createElement("div");
             gridDiv.id = "grid";
-            gridDiv.style.backgroundColor = "blue";
-            gridDiv.style.width = ""+gridWidth+"px";
-            gridDiv.style.border = "1px solid";
-            gridDiv.style.borderColor = "black";
+            gridDiv.style.width = ""+ gridWidth +"px";
+            gridDiv.addEventListener("mouseenter", () => {
+                let r = Math.floor(Math.random()*256);
+                console.log("R: " + r);
+                let g = Math.floor(Math.random()*256);
+                console.log("G: " + g);
+                let b = Math.floor(Math.random()*256);
+                console.log("B: " + b);
+                gridDiv.style.backgroundColor = "rgb("+r+","+g+","+b+")"; 
+            });
             gridContainer.appendChild(gridDiv);
         }
     }
@@ -41,8 +47,8 @@ btn.addEventListener("click", () => {
     while (input > 100 || input < 2 || isNaN(input)) {
         input = prompt("The number must be between 2-100. Try again.");
     }
-    intInput = parseInt(input);
-
+    let intInput = parseInt(input);
+    console.log("Input: " + intInput)
     if(document.querySelector("#grid"))
     {
         deleteGrid();
@@ -51,5 +57,4 @@ btn.addEventListener("click", () => {
     createGrid(intInput);
     
 });
-
 
