@@ -1,18 +1,19 @@
 const btn = document.querySelector("#btn");
 
-// let input = 16;
-
 // Create grid
 function createGrid(input) {
-    // Create input,input grid
-    let realInput = input++;
+    // Setting Parameters for Grid
+    let realInput = input++;    
     const gridContainer = document.querySelector("#container");
     let gridWidth = (960 / input);
-    // console.log("RealInput:" + realInput);
-    console.log("Before rounding:" + gridWidth + "|" + input + "/" + gridWidth);
-    gridWidth = Math.round(gridWidth);
-    console.log("After rounding:" + gridWidth + "|" + input + "/" + gridWidth);
-    for(let i = 0; i<realInput;i++)
+
+    // while(document.querySelector("#grid")){
+    //     gridContainer.removeChild(gridContainer.gridDiv);
+        
+    // }
+    
+    // Create grid
+    for(let i = 0; i<realInput;i++){
         for (let j = 0; j < realInput; j++){
             const gridDiv = document.createElement("div");
             gridDiv.id = "grid";
@@ -23,13 +24,32 @@ function createGrid(input) {
             gridContainer.appendChild(gridDiv);
         }
     }
+}
 
+function deleteGrid() {
+    // Use this to delete the grid....
+    if(document.querySelector("#grid")){
+        while(document.querySelector("#grid")){
+            const delGrid = document.querySelector("#grid");
+            const gridContainer = document.querySelector("#container");
+            delGrid.remove();
+        }
+    }
+}
 btn.addEventListener("click", () => {
     let input = prompt("Enter number of squares on each side (max 100).");
     while (input > 100 || input < 2 || isNaN(input)) {
         input = prompt("The number must be between 2-100. Try again.");
     }
     intInput = parseInt(input);
+
+    if(document.querySelector("#grid"))
+    {
+        deleteGrid();
+    }
+    
     createGrid(intInput);
+    
 });
+
 

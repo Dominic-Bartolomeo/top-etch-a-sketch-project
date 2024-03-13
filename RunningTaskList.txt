@@ -15,6 +15,7 @@ JS:
 *    - Attach eventlistener to button
 *    - Grid is created with the same space
 *    - Maximum number of grid l || w is 100
+!    - Delete existing grid every time button is clicked.
 
 CSS:
 *    - Set grid to flex
@@ -28,3 +29,10 @@ MISC (Not sure where to put yet):
 Thinking:
 
 Make input amount of rows of columns. Hence why we only need to calc width.
+
+Need to see if the grid exists. IF it does, delete it. If it doesn't move on.
+
+    Make a check grid variable
+    set it to false
+    if grid exists get rid of the children
+    otherwise run create grid
